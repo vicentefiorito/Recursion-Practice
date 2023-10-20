@@ -4,6 +4,12 @@
 // It may be helpful to check out the background videos again if you don’t quite understand what should be going on.
 
 function mergeSort(arr){
+    // empty array
+    if(arr.length === 0) return "Please enter a non-empty array"
+
+    // array with one element
+    if(arr.length === 1) return arr
+    
     // finds the middle element of the array
     const middle = Math.round(arr.length/2)
 
@@ -16,6 +22,9 @@ function mergeSort(arr){
     // return sort(mergeSort(left),mergeSort(right))
 }
 
+function sort(leftArr,rightArr) {
+
+}
 
 
 const arr = [5,2,1,6,4] //[1,2,4,5,6]
