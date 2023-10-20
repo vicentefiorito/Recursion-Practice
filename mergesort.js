@@ -11,7 +11,7 @@ function mergeSort(arr){
     if(arr.length === 1) return arr
 
     // finds the middle element of the array
-    const middle = Math.round(arr.length/2)
+    const middle = Math.floor(arr.length/2)
 
     // left part of the array, including middle element
     const left = arr.slice(0,middle)
@@ -28,13 +28,14 @@ function sort(leftArr,rightArr) {
 
     // Iterates through the array
     while (leftArr.length > 0 && rightArr.length > 0) {
-        // checks if the element at the beginnign of the left is greater than the element at the beginning of the right
-        console.log('Left Array --> ' + leftArr)
-        leftArr.shift()
-        console.log('Right Array --> ' + rightArr)
-        rightArr.shift()
-
+        // checks values at the beginning of the respective arrays
+        const arrayWithMin = leftArr[0] < rightArr[0] ? leftArr : rightArr
+        const mergeElement = arrayWithMin.shift()
+        mergedArr.push(mergeElement)
+        console.log('Current Array --> ' + mergedArr)
     }
+
+    return mergedArr.concat(leftArr,rightArr)
 }
 
 
@@ -43,10 +44,5 @@ console.log(mergeSort([])) //[]
 console.log(mergeSort([5]))
 
 const arr = [5,2,1,6,4] //[1,2,4,5,6]
-const mid = Math.floor(arr.length/2)
-const arrLeft = arr.slice(0, mid)
-const arrRight = arr.slice(mid)
-sort(arrLeft,arrRight)
-
-// console.log(mergeSort(arr))
+console.log(mergeSort(arr))
 
