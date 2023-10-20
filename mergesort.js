@@ -32,7 +32,7 @@ function sort(leftArr,rightArr) {
         const arrayWithMin = leftArr[0] < rightArr[0] ? leftArr : rightArr
         const mergeElement = arrayWithMin.shift()
         mergedArr.push(mergeElement)
-        console.log('Current Array --> ' + mergedArr)
+        // console.log('Current Array --> ' + mergedArr)
     }
 
     return mergedArr.concat(leftArr,rightArr)
@@ -45,4 +45,7 @@ console.log(mergeSort([5]))
 
 const arr = [5,2,1,6,4] //[1,2,4,5,6]
 console.log(mergeSort(arr))
+
+const arr2 = [10,45,3,67,8,47] //[3,8,10,45,47,67]
+console.log(mergeSort(arr2))
 
