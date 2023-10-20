@@ -26,37 +26,26 @@ function sort(leftArr,rightArr) {
     // merges both arrays here
     const mergedArr = []
 
-    //counters to keep track of the array values
-    let iL = 0
-    let iR = 0
-
     // Iterates through the array
-    while (iL < leftArr.length && iR < rightArr.length) {
-        console.log(leftArr[iL])
-        iL++
-        console.log(rightArr[iR])
-        iR++
+    while (leftArr.length > 0 && rightArr.length > 0) {
+        // checks if the element at the beginnign of the left is greater than the element at the beginning of the right
+        console.log('Left Array --> ' + leftArr)
+        leftArr.shift()
+        console.log('Right Array --> ' + rightArr)
+        rightArr.shift()
+
     }
-
-    // while(iL < leftArr.length) {
-    //     console.log(leftArr[iL])
-    //     iL++
-    // }
-    
-    // while(iR < rightArr.length) {
-    //     console.log(rightArr[iR])
-    //     iR++
-    // }
-
 }
+
 
 // testing
 console.log(mergeSort([])) //[]
 console.log(mergeSort([5]))
 
 const arr = [5,2,1,6,4] //[1,2,4,5,6]
-const arrLeft = arr.slice(0, Math.round(arr.length/2))
-const arrRight = arr.slice(Math.round(arr.length/2))
+const mid = Math.floor(arr.length/2)
+const arrLeft = arr.slice(0, mid)
+const arrRight = arr.slice(mid)
 sort(arrLeft,arrRight)
 
 // console.log(mergeSort(arr))
