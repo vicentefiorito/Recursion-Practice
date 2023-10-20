@@ -9,7 +9,7 @@ function mergeSort(arr){
 
     // array with one element
     if(arr.length === 1) return arr
-    
+
     // finds the middle element of the array
     const middle = Math.round(arr.length/2)
 
@@ -19,13 +19,45 @@ function mergeSort(arr){
     const right = arr.slice(middle)
 
     // return the sorted array here
-    // return sort(mergeSort(left),mergeSort(right))
+    return sort(mergeSort(left),mergeSort(right))
 }
 
 function sort(leftArr,rightArr) {
+    // merges both arrays here
+    const mergedArr = []
+
+    //counters to keep track of the array values
+    let iL = 0
+    let iR = 0
+
+    // Iterates through the array
+    while (iL < leftArr.length && iR < rightArr.length) {
+        console.log(leftArr[iL])
+        iL++
+        console.log(rightArr[iR])
+        iR++
+    }
+
+    // while(iL < leftArr.length) {
+    //     console.log(leftArr[iL])
+    //     iL++
+    // }
+    
+    // while(iR < rightArr.length) {
+    //     console.log(rightArr[iR])
+    //     iR++
+    // }
 
 }
 
+// testing
+console.log(mergeSort([])) //[]
+console.log(mergeSort([5]))
 
 const arr = [5,2,1,6,4] //[1,2,4,5,6]
-mergeSort(arr)
+const arrLeft = arr.slice(0, Math.round(arr.length/2))
+const arrRight = arr.slice(Math.round(arr.length/2))
+sort(arrLeft,arrRight)
+
+// console.log(mergeSort(arr))
+
